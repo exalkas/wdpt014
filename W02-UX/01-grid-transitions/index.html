@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Grid and transitions</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            width: 100%;
+            min-height: 100vh;
+            /* background-color: pink; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            gap: 20px;
+            justify-content: space-around;
+        }
+
+        @media screen and (max-width: 1000px){
+
+            .container {
+
+                grid-template-columns: auto auto;
+            }
+        }
+        @media screen and (max-width: 600px){
+
+            .container {
+
+                grid-template-columns: auto;
+            }
+        }
+
+        img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            cursor: pointer;
+            transition: 2s;
+           
+        }
+
+        img:hover {
+            transform: scale(1.5);
+            filter: grayscale(100%);
+            transform:translateY(-100px)
+        }
+        
+        .img-div {
+            justify-self: center;
+            align-self: center;
+            border: 1px solid ;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="img-div"><img src="./gallery/01.jpg" alt=""></div>
+        <div class="img-div"><img src="./gallery/02.jpg" alt=""></div>
+        <div class="img-div"><img src="./gallery/03.jpg" alt=""></div>
+        <div class="img-div"><img src="./gallery/04.jpg" alt=""></div>
+        <div class="img-div"><img src="./gallery/05.jpg" alt=""></div>
+        <div class="img-div"><img src="./gallery/06.jpg" alt=""></div>
+        <div class="img-div"><img src="./gallery/07.jpg" alt=""></div>
+        <div class="img-div"><img src="./gallery/08.jpg" alt=""></div>
+        <div class="img-div"><img src="./gallery/09.jpg" alt=""></div>
+        <div class="img-div"><img src="./gallery/10.jpg" alt=""></div>
+    </div>
+</body>
+</html>
