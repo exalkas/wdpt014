@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burger button demo</title>
+
+    <style>
+        #menu-toggle {
+            display: none;
+        }
+
+        .burger-menu {
+            display: block;
+            width: 30px;
+            height: 25px;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        .burger-menu span {
+            display: block;
+            background-color: #333;
+            height: 3px;
+            width: 100%;
+            margin: 5px auto;
+            transition: all 0.3s ease-in-out;
+        }
+
+        #menu-toggle:checked + .burger-menu span:nth-of-type(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        #menu-toggle:checked + .burger-menu span:nth-of-type(2) {
+            opacity: 0;
+        }
+
+        #menu-toggle:checked + .burger-menu span:nth-of-type(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        #main-menu {
+            display: none;
+        }
+
+        #menu-toggle:checked ~ #main-menu {
+            display: block;
+        }
+
+        @media (min-width: 768px) {
+            #menu-toggle {
+                display: none;
+        }
+
+        #main-menu {
+            display: block;
+        }
+    }
+
+    </style>
+</head>
+<body>
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="burger-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+
+    <nav id="main-menu">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+</body>
+</html>
