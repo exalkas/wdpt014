@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDPT014 T-Shirt Eshop</title>
+
+    <style>
+        .centered {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <main id="main" onclick="console.log('hello from main')"></main>
+
+    <script>
+        const data = [
+            {
+                id: 1,
+                name: "Apple iPhone 11 (128GB) - Yellow",
+                descr: "6.1-inch (15 cm) IPS LCD with a resolution is 1792 × 828 pixels (1.4 megapixels) at a pixel density of 326 PPI with a maximum brightness of 625 nits and a 1400:1 contrast ratio",
+                ram: "128 GB",
+                image: "https://m.media-amazon.com/images/I/714Mg+6MoFL._SX522_.jpg",
+                price: 499,
+                rating: 4.5,
+                reviews: 259,
+                sold: 123
+            },
+            {
+                id: 2,
+                name: "Apple iPhone X (256GB) - Space Grey",
+                descr: "With gorgeous all-glass design with a beautiful 5.8-inch Super Retina display, A11 Bionic chip, wireless charging and an improved rear camera with dual optical image stabilization",
+                ram: "256 GB",
+                image: "https://m.media-amazon.com/images/I/513dDPynP6L._SL1000_.jpg",
+                price: 430,
+                rating: 4.5,
+                reviews: 7599,
+                sold: 3800
+            },
+            {
+                id: 3,
+                name: "Apple iPhone 13 (128GB) - Blue",
+                descr: "Features a ceramic shield front, Super Retina XDR display with True Tone and an A15 Bionic chip",
+                ram: "128 GB",
+                image: "https://m.media-amazon.com/images/I/71xb2xkN5qL._SX522_.jpg",
+                price: 689,
+                rating: 4.6,
+                reviews: 6824,
+                sold: 3412
+            },
+            {
+                id: 4,
+                name: "Apple iPhone 12 (128GB) - Purple",
+                descr: "6.1-inch and 5.4-inch sizes with identical features, including support for 5G cellular networks, OLED displays, improved cameras",
+                ram: "128 GB",
+                image: "https://m.media-amazon.com/images/I/71hIfcIPyxS._SX522_.jpg",
+                price: 609,
+                rating: 4.6,
+                reviews: 10032,
+                sold: 5016
+            },
+            {
+                id: 5,
+                name: "Apple iPhone 13 Pro Max (256GB) - Sierra Blue",
+                descr: "Apple's biggest phone in the lineup with a massive, 6.7 screen that for the first time in an iPhone comes with 120Hz ProMotion display that ensures super smooth scrolling",
+                ram: "256 GB",
+                image: "https://m.media-amazon.com/images/I/61i8Vjb17SL._SX522_.jpg",
+                price: 1259,
+                rating: 4.7,
+                reviews: 923,
+                sold: 412
+            }
+        ]    
+    const header = document.createElement('header')
+        console.log("🚀 ~ header:", header)
+        document.body.appendChild(header)
+ 
+
+        header.style.width = '80%'
+        header.style.height = '100px'
+        header.style.background = 'pink'
+        header.style.margin = 'auto'
+
+        const body = document.querySelector('body')
+        // console.log("🚀 ~ body:", body)
+        body.style.display = 'flex'
+        body.style.flexDirection = 'column'
+
+        const home = document.createElement('div')
+        header.appendChild(home)
+        home.textContent = '<p>Home</p>'
+
+        const contact = document.createElement('div')
+        header.appendChild(contact)
+        contact.innerHTML = '<p>Contact</p>'
+
+        const categories = document.createElement('div')
+        header.appendChild(categories)
+        categories.innerText = 'Categories'
+        
+        // createElement('div', header)
+        // createElement('div', header)
+        // createElement('div', header)
+
+        const main = document.getElementById('main')
+
+        document.body.insertBefore(header, main)
+
+        console.log("🚀 ~ main:", main)
+        main.style.background = 'yellow'
+        main.style.width = '80%'
+        // main.style.height = '400px'
+        main.style.margin = 'auto'
+        main.style.padding = '20px'
+        main.style.display = 'flex'
+        main.style.flexWrap = 'wrap'
+        main.style.justifyContent = 'center'
+        main.style.gap = '20px'
+
+
+
+
+        function createElement(elementType, parent) {
+
+            const element = document.createElement(elementType)
+            parent.appendChild(element)
+        }
+
+        for (let i = 0; i < 1; i++) {
+
+            createCard(i)
+
+        }
+
+        function createCard(index) {
+
+            const card = document.createElement('div')
+            main.appendChild(card)
+
+            card.style.height = '300px'
+            card.style.width = '200px'
+            card.style.background = 'rgb(31 41 55)'
+            card.style.borderRadius = '10px'
+
+            const img = document.createElement('img')
+            card.appendChild(img)
+            img.style.width = '180px'
+            img.style.height = '180px'
+            img.style.objectFit = 'cover'
+            img.src = data[index].image
+
+            const title = document.createElement('p')
+            card.appendChild(title)
+            title.style.color = 'white'
+            title.textContent = data[index].name
+
+            const price = document.createElement('p')
+            card.appendChild(price)
+            price.style.color = 'white'
+            price.textContent = data[index].price
+
+            const paragraphs = document.getElementsByTagName('p')
+            console.log("🚀 ~ paragraphs:", paragraphs)
+
+            for (let i = 0; i < paragraphs.length; i++) {
+                paragraphs[i].classList.add('centered')
+            }
+
+            title.classList.remove('centered')
+
+            function toggle () {price.classList.toggle('centered')}
+            price.onclick = toggle
+        }
+
+        // document.body.innerHTML = ''
+        // console.log("Hello world")
+    </script>
+
+</body>
+</html>
