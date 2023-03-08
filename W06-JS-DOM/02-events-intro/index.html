@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events demo</title>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        header {
+            height: 100px;
+            background: pink;
+            width: 100%;
+        }
+        form {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Cart Items: <span class="items">0</span>
+    </header>
+    <main>
+        <button id="addCart">Add to cart</button>
+        <form>
+            <input 
+                class="name"
+                minlength="3"
+                type="text" 
+                placeholder="Type your name"
+
+            />
+            <input 
+                class="email"
+                type="text" 
+                placeholder="Type your email"
+            />
+            <input type="submit"/>
+        </form>
+        
+        <button id="remove">Remove Listeners</button>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
