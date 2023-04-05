@@ -1,0 +1,11 @@
+.app {
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+img {
+  height: 300px;
+  width: 300px;
+  object-fit: cover;
+}
